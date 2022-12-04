@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+
+  python:
+    container_name: pbl6-python
+    build: ./python
+    command: uwsgi --socket :8001 --module music.wsgi --py-autoreload 1 --logto /tmp/mylog.log
+    volumes:
+      - ./music:/code
+      - ./static:/static
+    expose:
+      - "8001"
+    depends_on:
+      - db
+
+  db:
+    env_file:
+      - .env
+    container_name: pbl6-db
+    image: mysql:5.7
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_NAME}
+    volumes:
+      - ./mysql:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
+
+#  nginx:
+#    container_name: pbl6-nginx
+#    image: nginx:1.13
+#    ports:
+#      - "8000:8000"
+#    volumes:
+#      - ./nginx/conf:/etc/nginx/conf.d
+#      - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+#      - ./static:/static
+#    depends_on:
+#      - python
