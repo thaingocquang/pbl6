@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'drf_yasg',
-    'singer.apps.SingerConfig'
+    'singer.apps.SingerConfig',
+    'song.apps.SongConfig',
+    'album.apps.AlbumConfig'
 ]
 
 MIDDLEWARE = [

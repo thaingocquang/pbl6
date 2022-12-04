@@ -5,6 +5,6 @@ from .serializers import SingerSerializer
 
 
 class SingerViewSet(viewsets.ModelViewSet):
-    queryset = Singer.objects.filter()
+    queryset = Singer.objects.all()
     serializer_class = SingerSerializer
 
