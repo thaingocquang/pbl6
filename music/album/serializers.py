@@ -4,7 +4,6 @@ from singer.serializers import SingerSerializer
 
 
 class AlbumSerializer(ModelSerializer):
-    singers = SingerSerializer(many=True, read_only=True)
 
     class Meta:
         model = Album

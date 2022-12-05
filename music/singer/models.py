@@ -1,8 +1,6 @@
 import uuid
 
 from django.db import models
-from song.models import Song
-from album.models import Album
 
 
 class Singer(models.Model):
@@ -10,8 +8,8 @@ class Singer(models.Model):
     name = models.CharField(max_length=255)
     age = models.IntegerField()
 
-    songs = models.ManyToManyField(Song, related_name='singers', blank=True)
-    albums = models.ManyToManyField(Album, related_name='albums', blank=True)
+    # songs = models.ManyToManyField(Song, related_name='singers', blank=True)
+    # albums = models.ManyToManyField(Album, related_name='albums', blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
