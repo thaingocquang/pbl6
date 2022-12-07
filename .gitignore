@@ -3,3 +3,4 @@ venv
 main.py
 mysql/*
 music/static
+music/songs-stored

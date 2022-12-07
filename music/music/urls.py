@@ -41,5 +41,6 @@ urlpatterns = [
 
     path('singer/', include('singer.urls')),
     path('song/', include('song.urls')),
-    path('album/', include('album.urls'))
+    path('album/', include('album.urls')),
+    path('recognition/', include('recognition.urls'))
 ]
