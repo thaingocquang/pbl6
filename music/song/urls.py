@@ -6,5 +6,5 @@ router = DefaultRouter()
 router.register('songs', SongViewSet)
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
 ]
