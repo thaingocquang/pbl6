@@ -4,3 +4,4 @@ main.py
 mysql/*
 music/static
 music/songs-stored
+music/trains-database/*
