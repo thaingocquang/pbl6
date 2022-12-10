@@ -1,3 +1,9 @@
+# Init project
+cd to music/
+1. `mkdir songs-stored`
+2. `mkdir trains-database`
+
+
 # Run project in localhost:
 - turn on virtualenv
 - install requirements `pip install -r requirements.txt`
