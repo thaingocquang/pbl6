@@ -6,3 +6,15 @@ music/static
 music/songs-stored
 music/trains-database/*
 music/songs-recognition/*
+
+music/album/migrations/*
+!music/album/migrations/__init__.py
+
+music/singer/migrations/*
+!music/singer/migrations/__init__.py
+
+music/song/migrations/*
+!music/song/migrations/__init__.py
+
+music/recognition/migrations/*
+!music/recognition/migrations/__init__.py
