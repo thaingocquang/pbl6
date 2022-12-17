@@ -3,8 +3,8 @@ import uuid
 from django.db import models
 
 
-class Singer(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4(), editable=False)
+class SingerModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255)
     age = models.IntegerField()
 

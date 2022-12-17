@@ -1,8 +1,8 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Singer
+from .models import SingerModel
 
 
 class SingerSerializer(ModelSerializer):
     class Meta:
-        model = Singer
+        model = SingerModel
         fields = ['id', 'name', 'age']

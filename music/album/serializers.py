@@ -1,10 +1,10 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Album
+from .models import AlbumModel
 from singer.serializers import SingerSerializer
 
 
 class AlbumSerializer(ModelSerializer):
 
     class Meta:
-        model = Album
+        model = AlbumModel
         fields = ['id', 'name', 'singers']
