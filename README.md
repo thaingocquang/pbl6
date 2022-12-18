@@ -24,3 +24,10 @@ cd to music/
 - sudo ln -s /etc/nginx/sites-available/`project-name`.conf /etc/nginx/sites-enabled/
 - `python manage.py collectstatic`
 - systemctl restart nginx
+- 
+===========
+- clone
+- create venv
+- install requirements.txt
+- python manage.py collectstatic
+- uwsgi --ini music_uwsgi.ini
