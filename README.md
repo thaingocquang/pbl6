@@ -26,6 +26,7 @@ cd to music/
 - systemctl restart nginx
 - 
 ===========
+- docker run --name pbl6-db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=music -itd mysql
 - clone
 - create venv
 - install requirements.txt
