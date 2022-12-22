@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'singer.apps.SingerConfig',
     'song.apps.SongConfig',
     'album.apps.AlbumConfig',
-    'recognition.apps.RecognitionConfig'
+    'recognition.apps.RecognitionConfig',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -62,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'music.urls'
@@ -142,3 +144,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 SWAGGER_SETTINGS = {
    'USE_SESSION_AUTH': False
 }
+
+CORS_ORIGIN_ALLOW_ALL = True
