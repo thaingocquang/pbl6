@@ -2,9 +2,12 @@ venv
 .idea
 main.py
 mysql/*
+
 music/static
+music/media
+
 music/songs-stored
-music/trains-database/*
+music/trained-database/*
 music/songs-recognition/*
 
 music/album/migrations/*

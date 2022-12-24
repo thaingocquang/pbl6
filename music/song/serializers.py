@@ -19,6 +19,9 @@ class SongSerializer(ModelSerializer):
         # fields = ['id', 'name', 'album']
         fields = '__all__'
 
+    def create(self, validated_data):
+        print("HELLO")
+
 
 class SongRecogSerializer(serializers.Serializer):
     audio_file = serializers.FileField(

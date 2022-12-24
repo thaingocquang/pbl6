@@ -33,39 +33,38 @@ def song_recognize(request):
     hashes = create_hashes(constellation, None)
 
     # Load database
-    database = pickle.load(open('trains-database/database.pickle', 'rb'))
+    database = pickle.load(open('trained-database/database.pickle', 'rb'))
 
     scores = score_hashes_against_database(database, hashes)[:5]
 
     res = []
 
     for song_id, score in scores:
+        print("song_id: ",song_id)
+
         song = SongModel.objects.get(id=song_id)
 
         album = AlbumModel.objects.get(id=song.album.id)
-        singers = album.singers.all()
+        # singers = album.singers.all()
 
-        res_singers = []
-        for s in singers:
-            res_singers.append({
-                "id": s.id,
-                "name": s.name
-            })
+        # res_singers = []
+        # for s in singers:
+        #     res_singers.append({
+        #         "id": s.id,
+        #         "name": s.name
+        #     })
 
         res.append(
             {
                 # "song_name": song.name,
-                "song": {
-                    "id": song.id,
-                    "name": song.name,
-                    "album": {
-                        "id": album.id,
-                        "name": album.name
-                    },
-                    "singers": res_singers
-                },
-                "score_of": score[1],
-                "score_at": score[0]
+                "song_id": song.id,
+                "song_name": song.name,
+                "song_audio_url": song.audio_file.name,
+                "album_id": album.id,
+                "album_name": album.name,
+                "singer_id": album.singer.id,
+                "singer_name": album.singer.name,
+                "singer_avatar_url": album.singer.avatar.name,
             }
         )
 

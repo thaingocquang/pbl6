@@ -1,7 +1,10 @@
 from django.contrib import admin
-
-# Register your models here.
 from .models import SongModel
 
-# Register your models here.
-admin.site.register(SongModel)
+
+class SongAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'audio_file', 'created_at', 'updated_at']
+    search_fields = ['name']
+
+
+admin.site.register(SongModel, SongAdmin)
