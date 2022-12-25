@@ -26,7 +26,7 @@ class SongSerializer(ModelSerializer):
 class SongRecogSerializer(serializers.Serializer):
     audio_file = serializers.FileField(
         validators=[
-            FileExtensionValidator(allowed_extensions=['flac', 'mov', 'wav', 'mp3'])
+            FileExtensionValidator(allowed_extensions=['wav'])
         ]
     )
 
