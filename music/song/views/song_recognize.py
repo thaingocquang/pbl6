@@ -7,16 +7,19 @@ import pickle
 
 from song.models import SongModel
 from album.models import AlbumModel
-from singer.models import SingerModel
+from rest_framework.response import Response
 
 from django.http import JsonResponse
-from rest_framework.status import HTTP_200_OK
+from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
 import os
 
 
 def song_recognize(request):
     # Save audio file to folder
     temp_audio_file = request.FILES.get('audio_file')
+
+    if temp_audio_file is None:
+        return Response({"message": "missing or invalid audio file!"}, HTTP_400_BAD_REQUEST)
 
     if os.path.exists('songs-recognition') is False:
         os.mkdir('songs-recognition')
