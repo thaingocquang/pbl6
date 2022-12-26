@@ -34,7 +34,7 @@ SECRET_KEY = '0iu)1_t6wa^k2_1f+4dc*gbbl#=_r898@m+!p9pcrq33!b%pg='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', env('ALLOWED_HOST')]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', env('ALLOWED_HOST'), 'musicregconition.click']
 
 
 # Application definition
